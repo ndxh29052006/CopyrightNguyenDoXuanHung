@@ -14,7 +14,7 @@ module.exports.run = async function({ api, event, Users }) {
 	const { threadID } = event;
 	if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
 		api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "Bypass bởi Mai Huy Bảo" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
-		return api.sendMessage(`Connected successfully! This bot was made by someone and Bypass Gban by Mai Huy Bảo`, threadID);
+		return api.sendMessage(`Bot Chạy Bằng Cơm DoraBot Coder Bởi CThong Đã Tham Gia Nhóm Chat Của Bạn Chúc Bạn Sử Dụng Vui Vẻ <3 Doraemon Rất Đẹp Trai 😎 Liên hệ admin : https://www.facebook.com/Cthong2004`, threadID);
 	}
 	else {
 		try {
@@ -41,7 +41,7 @@ module.exports.run = async function({ api, event, Users }) {
 			}
 			memLength.sort((a, b) => a - b);
 			
-			(typeof threadData.customJoin == "undefined") ? msg = "Welcome aboard {name}.\nChào mừng đã đến với {threadName}.\n{type} là thành viên thứ {soThanhVien} của nhóm 🥳" : msg = threadData.customJoin;
+			(typeof threadData.customJoin == "undefined") ? msg = "Xin chào {name}.\nChào mừng đã đến với {threadName}.\n{type} là thành viên thứ {soThanhVien} của nhóm 🥳\nNhớ tương tác để đéo bị quản trị viên đuổi 😘" : msg = threadData.customJoin;
 			msg = msg
 			.replace(/\{name}/g, nameArray.join(', '))
 			.replace(/\{type}/g, (memLength.length > 1) ?  'các bạn' : 'bạn')
