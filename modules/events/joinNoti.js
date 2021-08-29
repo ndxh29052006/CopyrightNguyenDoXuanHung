@@ -13,7 +13,7 @@ module.exports.run = async function({ api, event, Users }) {
 	const { join } = global.nodemodule["path"];
 	const { threadID } = event;
 	if (event.logMessageData.addedParticipants.some(i => i.userFbId == api.getCurrentUserID())) {
-		api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "Bypass bởi Mai Huy Bảo" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
+		api.changeNickname(`[ ${global.config.PREFIX} ] • ${(!global.config.BOTNAME) ? "Bypass bởi CThong" : global.config.BOTNAME}`, threadID, api.getCurrentUserID());
 		return api.sendMessage(`Bot Chạy Bằng Cơm DoraBot Coder Bởi CThong Đã Tham Gia Nhóm Chat Của Bạn Chúc Bạn Sử Dụng Vui Vẻ <3 Doraemon Rất Đẹp Trai 😎 Liên hệ admin : https://www.facebook.com/Cthong2004`, threadID);
 	}
 	else {
